@@ -9,6 +9,7 @@ defmodule HangmanWeb.HangmanLive do
       |> assign(:word, random_word)
       |> assign(:guessed_correct, [])
       |> assign(:guessed_wrong, [])
+      |> assign(:game_end, false)
 
     {:ok, socket}
   end
@@ -31,6 +32,8 @@ defmodule HangmanWeb.HangmanLive do
         <div class="hang-part" id={"part#{num}"}></div>
       <% end %>
     </div>
+
+    <div :if={@game_end}></div>
 
     <div class="content-start">
       <%= for letter <- Enum.map(?A..?Z, fn(x) -> <<x :: utf8>> end) do %>
@@ -74,9 +77,15 @@ defmodule HangmanWeb.HangmanLive do
     if socket.assigns.word
        |> Enum.filter(fn x -> not Enum.member?(socket.assigns.guessed_correct, x) end)
        |> Enum.count() == 0 do
-      socket |> push_event("won", %{})
+      socket
+      |> push_event("won", %{})
+      |> end_game()
     else
       socket
     end
+  end
+
+  defp end_game(socket) do
+    assign(socket, :game_end, true)
   end
 end
