@@ -34,21 +34,15 @@ defmodule HangmanWeb.HangmanLive do
 
     <div class="content-start">
       <%= for letter <- Enum.map(?A..?Z, fn(x) -> <<x :: utf8>> end) do %>
-        <%= if Enum.member?(assigns.guessed_wrong, letter) do %>
-          <button class="btn btn-red" phx-click="choice_made" phx-value-letter={letter}>
-            <%= letter %>
-          </button>
-        <% else %>
-          <%= if Enum.member?(assigns.guessed_correct, letter) do %>
-            <button class="btn btn-green" phx-click="choice_made" phx-value-letter={letter}>
-              <%= letter %>
-            </button>
-          <% else %>
-            <button class="btn" phx-click="choice_made" phx-value-letter={letter}>
-              <%= letter %>
-            </button>
-          <% end %>
-        <% end %>
+        <button
+          class="btn btn-green"
+          phx-click="choice_made"
+          phx-value-letter={letter}
+          data-guessed-correct={Enum.member?(assigns.guessed_correct, letter)}
+          data-guessed-wrong={Enum.member?(assigns.guessed_wrong, letter)}
+        >
+          <%= letter %>
+        </button>
       <% end %>
     </div>
     """

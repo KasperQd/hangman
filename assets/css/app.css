@@ -3,17 +3,17 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
-.btn {
+button {
     @apply font-bold w-10 h-10 rounded m-1 border-2;
 }
-.btn:hover {
+button:hover {
     @apply bg-gray-200;
 }
-.btn-green, .btn-green:hover {
-    @apply bg-green-500 text-white;
+button[data-guessed-correct] {
+    @apply bg-green-500
 }
-.btn-red, .btn-red:hover {
-    @apply bg-red-500 text-white;
+button[data-guessed-wrong] {
+    @apply bg-red-500
 }
 
 .current-word {
