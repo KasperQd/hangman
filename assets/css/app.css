@@ -3,3 +3,121 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+.btn {
+    @apply font-bold w-10 h-10 rounded m-1 border-2;
+}
+.btn:hover {
+    @apply bg-gray-200;
+}
+.btn-green, .btn-green:hover {
+    @apply bg-green-500 text-white;
+}
+.btn-red, .btn-red:hover {
+    @apply bg-red-500 text-white;
+}
+
+.current-word {
+    @apply mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white
+}
+
+#galg {
+    width: 30vw;
+    height: 60vh;
+    margin: 10px;
+    position: relative;
+}
+.hang-part {
+    background-color: gray;
+    position: absolute;
+}
+
+.letter {
+    font-size: x-large;
+    margin: 20px;
+    display: inline;
+}
+
+#input {
+    margin: 20px;
+}
+
+#part1 {
+    width: 40%;
+    height: 2%;
+    top: 90%;
+}
+
+#part2 {
+    width: 2%;
+    height: 72%;
+    left: 2%;
+    top: 20%;
+}
+
+#part3 {
+    width: 60%;
+    height: 2%;
+    top: 20%;
+}
+
+#part4 {
+    width: 15%;
+    height: 1%;
+    top: 25%;
+    transform: rotate(-45deg);
+}
+
+#part5 {
+    width: 1%;
+    height: 10%;
+    left: 55%;
+    top: 21%;
+}
+
+#part6 {
+    border-radius: 50%;
+    width: 10%;
+    aspect-ratio: 1/1;
+    left: 50.5%;
+    top: 30%;
+}
+
+#part7 {
+    border-radius: 50%;
+    width: 4%;
+    height: 20%;
+    left: 54%;
+    top: 35%;
+}
+
+#part8 {
+    width: 20%;
+    height: 1%;
+    top: 37%;
+    left: 54%;
+    transform: rotate(-45deg);
+}
+
+#part9 {
+    width: 20%;
+    height: 1%;
+    top: 37%;
+    left: 38%;
+    transform: rotate(45deg);
+}
+
+#part10 {
+    width: 20%;
+    height: 1%;
+    top: 58%;
+    left: 40%;
+    transform: rotate(-60deg);
+}
+
+#part11 {
+    width: 20%;
+    height: 1%;
+    top: 58%;
+    left: 52%;
+    transform: rotate(60deg);
+}
